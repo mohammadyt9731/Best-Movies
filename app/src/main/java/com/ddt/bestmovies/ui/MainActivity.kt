@@ -1,7 +1,8 @@
-package com.ddt.bestmovies
+package com.ddt.bestmovies.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ddt.bestmovies.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
