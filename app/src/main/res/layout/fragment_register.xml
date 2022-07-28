@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.register.RegisterFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <!--Avatar-->
+    <ImageView
+        android:id="@+id/ivUserAvatar"
+        android:layout_width="@dimen/_80mdp"
+        android:layout_height="@dimen/_80mdp"
+        android:layout_marginTop="@dimen/_50mdp"
+        android:src="@drawable/user_avatar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <!--Name-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilName"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_30mdp"
+        android:layout_marginTop="@dimen/_50mdp"
+        android:hint="@string/name"
+        app:layout_constraintTop_toBottomOf="@id/ivUserAvatar"
+        app:startIconDrawable="@drawable/ic_round_person_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            style="@style/textViewLightStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14font_mdp"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Email-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/itlEmail"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_30mdp"
+        android:layout_marginTop="@dimen/_20mdp"
+        android:hint="@string/email"
+        app:layout_constraintTop_toBottomOf="@id/tilName"
+        app:startIconDrawable="@drawable/ic_round_email_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/textViewLightStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14font_mdp"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Password-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_30mdp"
+        android:layout_marginTop="@dimen/_20mdp"
+        android:hint="@string/password"
+        app:layout_constraintTop_toBottomOf="@id/itlEmail"
+        app:startIconDrawable="@drawable/ic_round_lock_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/textViewLightStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14font_mdp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Submit btn-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50mdp"
+        android:layout_marginTop="@dimen/_40font_mdp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/submit"
+        android:textColor="@color/gunmetal"
+        android:textSize="@dimen/_18font_mdp"
+        app:cornerRadius="@dimen/_3mdp"
+        app:layout_constraintLeft_toLeftOf="@id/tilPassword"
+        app:layout_constraintRight_toRightOf="@id/tilPassword"
+        app:layout_constraintTop_toBottomOf="@id/tilPassword" />
+
+    <!--loading progress bar-->
+    <ProgressBar
+        android:layout_width="@dimen/_20mdp"
+        android:layout_height="@dimen/_20mdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/btnSubmit"
+        app:layout_constraintLeft_toLeftOf="@id/btnSubmit"
+        app:layout_constraintRight_toRightOf="@id/btnSubmit"
+        app:layout_constraintTop_toTopOf="@id/btnSubmit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

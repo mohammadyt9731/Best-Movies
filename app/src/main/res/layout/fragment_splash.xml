@@ -23,8 +23,8 @@
         app:layout_constraintLeft_toLeftOf="@id/ivAppLogo"
         android:text="@string/app_name"
         android:textSize="@dimen/_14font_mdp"
-        android:layout_marginTop="@dimen/_50font_mdp"
-        style="@style/textViewLIghtStyle"
+        android:layout_marginTop="@dimen/_50mdp"
+        style="@style/textViewLightStyle"
         app:layout_constraintRight_toRightOf="@id/ivAppLogo"/>
 
 
