@@ -9,7 +9,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.ddt.bestmovies.R
 import com.ddt.bestmovies.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     //binding
     private lateinit var binding:ActivityMainBinding

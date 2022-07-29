@@ -71,6 +71,8 @@
         android:layout_marginHorizontal="@dimen/_30mdp"
         android:layout_marginTop="@dimen/_20mdp"
         android:hint="@string/password"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/philippineSilver"
         app:layout_constraintTop_toBottomOf="@id/itlEmail"
         app:startIconDrawable="@drawable/ic_round_lock_24">
 
