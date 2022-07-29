@@ -9,4 +9,8 @@ object Constants {
     //SplashFragment
     const val SPLASH_DELAY_DURATION=2000L
 
+    //api
+    const val BASE_URL="https://moviesapi.ir/api/v1/"
+    const val CONNECTION_TIME_OUT=60L
+
 }
