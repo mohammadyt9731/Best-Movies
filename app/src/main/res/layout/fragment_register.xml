@@ -53,6 +53,7 @@
         app:startIconDrawable="@drawable/ic_round_email_24">
 
         <com.google.android.material.textfield.TextInputEditText
+         android:id="@+id/etEmail"
             style="@style/textViewLightStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,6 +78,7 @@
         app:startIconDrawable="@drawable/ic_round_lock_24">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
             style="@style/textViewLightStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,6 +103,7 @@
 
     <!--loading progress bar-->
     <ProgressBar
+        android:id="@+id/progressBarLoading"
         android:layout_width="@dimen/_20mdp"
         android:layout_height="@dimen/_20mdp"
         android:visibility="gone"

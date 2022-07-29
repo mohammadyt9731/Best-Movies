@@ -13,10 +13,11 @@
         <action
             android:id="@+id/actionSplashToRegister"
             app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/actionSplashToHome"
-            app:destination="@id/homeFragment" />
+
     </fragment>
+    <action
+        android:id="@+id/actionToHome"
+        app:destination="@id/homeFragment" />
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.ddt.bestmovies.ui.register.RegisterFragment"

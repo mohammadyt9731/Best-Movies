@@ -6,11 +6,12 @@ import androidx.lifecycle.viewModelScope
 import com.ddt.bestmovies.models.register.BodyRegister
 import com.ddt.bestmovies.models.register.ResponseRegister
 import com.ddt.bestmovies.repository.RegisterRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@ViewModelScoped
+@HiltViewModel
 class RegisterViewModel @Inject constructor(private val registerRepository: RegisterRepository) : ViewModel() {
 
     val responseRegister=MutableLiveData<ResponseRegister>()

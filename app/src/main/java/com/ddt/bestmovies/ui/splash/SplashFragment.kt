@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.coroutineScope
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.ddt.bestmovies.R
 import com.ddt.bestmovies.databinding.FragmentSplashBinding
@@ -14,7 +13,6 @@ import com.ddt.bestmovies.utils.Constants
 import com.ddt.bestmovies.utils.UserDataStore
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -46,7 +44,7 @@ class SplashFragment : Fragment() {
                 if(it.isEmpty())
                     findNavController().navigate(R.id.actionSplashToRegister)
                 else
-                    findNavController().navigate(R.id.actionSplashToHome)
+                    findNavController().navigate(R.id.actionToHome)
 
             }
 
