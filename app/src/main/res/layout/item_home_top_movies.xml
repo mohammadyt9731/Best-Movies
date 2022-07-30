@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--image-->
+    <ImageView
+        android:id="@+id/ivTopMovies"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300mdp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+    <!--Shadow-->
+    <View
+        android:id="@+id/viewShadow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150mdp"
+        android:background="@drawable/bg_shadow"
+        app:layout_constraintBottom_toBottomOf="@id/ivTopMovies" />
+    <!--Name-->
+    <TextView
+        android:id="@+id/tvTopMovieName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14font_mdp"
+        app:layout_constraintBottom_toTopOf="@id/tvTopMovieInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!--Info-->
+    <TextView
+        android:id="@+id/tvTopMovieInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10mdp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:textColor="@color/philippineSilver"
+        android:textSize="@dimen/_12font_mdp"
+        app:drawableStartCompat="@drawable/ic_round_star_24"
+        app:drawableTint="@color/crayola"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
