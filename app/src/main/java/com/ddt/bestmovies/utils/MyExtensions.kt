@@ -1,6 +1,7 @@
 package com.ddt.bestmovies.utils
 
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 
 fun View.setVisibility(isVisible:Boolean){
 
@@ -11,4 +12,10 @@ fun View.setVisibility(isVisible:Boolean){
         this.visibility=View.INVISIBLE
     }
 
+}
+
+
+fun RecyclerView.initRecycler(layoutManager: RecyclerView.LayoutManager,adapter:RecyclerView.Adapter<*>){
+    this.layoutManager=layoutManager
+    this.adapter=adapter
 }

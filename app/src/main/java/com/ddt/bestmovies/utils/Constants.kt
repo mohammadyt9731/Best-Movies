@@ -15,5 +15,6 @@ object Constants {
 
     //homeFragment
     const val LOAD_IMAGE_CROSS_FADE=800
+    const val GENRE_ID=2
 
 }
