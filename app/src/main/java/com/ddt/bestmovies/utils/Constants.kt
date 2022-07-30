@@ -13,4 +13,7 @@ object Constants {
     const val BASE_URL="https://moviesapi.ir/api/v1/"
     const val CONNECTION_TIME_OUT=60L
 
+    //homeFragment
+    const val LOAD_IMAGE_CROSS_FADE=800
+
 }
