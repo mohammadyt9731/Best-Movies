@@ -11,11 +11,11 @@
         android:id="@+id/nestedScrollHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <!--topMoviesLayout-->
+        <!--container-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
+            <!--topMovies Layout-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clTopMovies"
                 android:layout_width="match_parent"
@@ -26,23 +26,52 @@
                     android:id="@+id/rvTopMovies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
                 <!--indicator-->
                 <me.relex.circleindicator.CircleIndicator2
                     android:id="@+id/indicator"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_10mdp"
-                    app:layout_constraintTop_toBottomOf="@id/rvTopMovies"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    />
-
+                    app:layout_constraintTop_toBottomOf="@id/rvTopMovies" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!--Genre Layout-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clGenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                app:layout_constraintTop_toBottomOf="@id/clTopMovies">
+
+                <!--Genre-->
+                <TextView
+                    android:id="@+id/tvGenreTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10mdp"
+                    android:text="@string/genres"
+                    android:textColor="@color/crayola"
+                    android:textSize="@dimen/_12font_mdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--recycler genre-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvGenre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5mdp"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/_10mdp"
+                    app:layout_constraintTop_toBottomOf="@id/tvGenreTitle" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

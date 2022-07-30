@@ -29,7 +29,7 @@
         android:layout_marginBottom="@dimen/_5mdp"
         android:ellipsize="marquee"
         android:fontFamily="sans-serif-medium"
-        android:gravity="start"
+        android:gravity="center"
         android:singleLine="true"
         android:marqueeRepeatLimit="marquee_forever"
         android:textColor="@color/white"

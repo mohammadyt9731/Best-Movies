@@ -1,4 +1,4 @@
-package com.ddt.bestmovies.ui.home
+package com.ddt.bestmovies.ui.home.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

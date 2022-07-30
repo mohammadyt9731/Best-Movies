@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
-import com.ddt.bestmovies.R
+import androidx.recyclerview.widget.RecyclerView
 import com.ddt.bestmovies.databinding.FragmentHomeBinding
+import com.ddt.bestmovies.ui.home.adapters.GenresListAdapter
+import com.ddt.bestmovies.ui.home.adapters.TopMoviesAdapter
 import com.ddt.bestmovies.utils.Constants
 import com.ddt.bestmovies.utils.initRecycler
 import com.ddt.bestmovies.viewmodel.HomeViewModel
@@ -25,6 +27,10 @@ class HomeFragment : Fragment() {
     //adapter
     @Inject
     lateinit var topMoviesAdapter: TopMoviesAdapter
+
+    @Inject
+    lateinit var gernresListAdapter: GenresListAdapter
+
     //viewModel
     private val homeViewModel:HomeViewModel by viewModels()
     //pager snap helper
@@ -34,6 +40,7 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         //call api
         homeViewModel.loadTopMoviesList(Constants.GENRE_ID)
+        homeViewModel.loadGenresList()
     }
 
     override fun onCreateView(
@@ -47,7 +54,7 @@ class HomeFragment : Fragment() {
 
         //initViews
         binding.apply {
-            //getData
+            //TopMovies
             homeViewModel.topMoviesList.observe(viewLifecycleOwner){
                 topMoviesAdapter.differ.submitList(it.data)
 
@@ -61,6 +68,15 @@ class HomeFragment : Fragment() {
                 indicator.attachToRecyclerView(rvTopMovies,pagerSnapHelper)
             }
 
+            //Genres
+            homeViewModel.genresList.observe(viewLifecycleOwner){
+                gernresListAdapter.differ.submitList(it)
+
+                rvGenre.initRecycler(LinearLayoutManager(requireContext()
+                    ,LinearLayoutManager.HORIZONTAL
+                    ,false)
+                    ,gernresListAdapter)
+            }
 
         }
     }
