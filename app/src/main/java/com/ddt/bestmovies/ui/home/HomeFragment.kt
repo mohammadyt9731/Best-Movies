@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
@@ -15,6 +16,7 @@ import com.ddt.bestmovies.ui.home.adapters.LastMoviesAdapter
 import com.ddt.bestmovies.ui.home.adapters.TopMoviesAdapter
 import com.ddt.bestmovies.utils.Constants
 import com.ddt.bestmovies.utils.initRecycler
+import com.ddt.bestmovies.utils.setVisibility
 import com.ddt.bestmovies.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -89,6 +91,20 @@ class HomeFragment : Fragment() {
 
                 //recyclerView
                 rvLastMovies.initRecycler(LinearLayoutManager(requireContext()),lastMoviesAdapter)
+            }
+
+            //loading
+            homeViewModel.loading.observe(viewLifecycleOwner){
+
+                if(it){
+
+                    nestedScrollHome.setVisibility(false)
+                    progressBarLoading.setVisibility(true)
+                }else{
+
+                    nestedScrollHome.setVisibility(true)
+                    progressBarLoading.setVisibility(false)
+                }
             }
         }
     }
