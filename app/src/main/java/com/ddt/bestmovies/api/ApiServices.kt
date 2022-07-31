@@ -5,10 +5,7 @@ import com.ddt.bestmovies.models.home.ResponseMoviesList
 import com.ddt.bestmovies.models.register.BodyRegister
 import com.ddt.bestmovies.models.register.ResponseRegister
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ApiServices {
 
@@ -23,5 +20,8 @@ interface ApiServices {
 
     @GET("movies")
     suspend fun lastMoviesList():Response<ResponseMoviesList>
+
+    @GET("movies")
+    suspend fun searchMoviesList(@Query("q") name:String):Response<ResponseMoviesList>
 
 }

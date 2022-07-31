@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.search.SearchFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--Search-->
+    <EditText
+        android:id="@+id/edtSearch"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="@dimen/_40mdp"
+        android:layout_margin="@dimen/_10mdp"
+        android:background="@drawable/bg_rounded_dark"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/searchHere"
+        android:maxLines="1"
+        android:padding="@dimen/_10mdp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/philippineSilver"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--List-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_10mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtSearch" />
+    <!--Loading-->
+    <ProgressBar
+        android:id="@+id/pbSearchLoading"
+        android:layout_width="@dimen/_20mdp"
+        android:layout_height="@dimen/_20mdp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--Empty-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clEmptyItem"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtSearch">
 
-</FrameLayout>
+        <include layout="@layout/view_empty_list" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
