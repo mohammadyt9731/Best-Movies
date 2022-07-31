@@ -14,8 +14,8 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(private val homeRepository: HomeRepository) : ViewModel() {
 
     val topMoviesList = MutableLiveData<ResponseMoviesList>()
-
     val genresList = MutableLiveData<ResponseGenresList>()
+    val lastMoviesList=MutableLiveData<ResponseMoviesList>()
 
     fun loadTopMoviesList(id: Int) {
         viewModelScope.launch {
@@ -35,5 +35,14 @@ class HomeViewModel @Inject constructor(private val homeRepository: HomeReposito
         }
     }
 
+    fun loadLastMoviesList(){
 
+        viewModelScope.launch {
+            val response=homeRepository.lastMoviesList()
+            if(response.isSuccessful){
+                lastMoviesList.postValue(response.body())
+            }
+        }
+
+    }
 }

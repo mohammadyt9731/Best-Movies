@@ -8,4 +8,6 @@ class HomeRepository @Inject constructor(private val api:ApiServices) {
     suspend fun topMoviesList(id:Int)=api.topMoviesList(id)
 
     suspend fun genresList()=api.genresList()
+
+    suspend fun lastMoviesList()=api.lastMoviesList()
 }

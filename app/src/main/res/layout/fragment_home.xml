@@ -15,7 +15,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <!--topMovies Layout-->
+            <!--topMovies-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clTopMovies"
                 android:layout_width="match_parent"
@@ -39,7 +39,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!--Genre Layout-->
+            <!--Genre-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clGenre"
                 android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 android:layout_marginTop="@dimen/_10mdp"
                 app:layout_constraintTop_toBottomOf="@id/clTopMovies">
 
-                <!--Genre-->
+                <!--title-->
                 <TextView
                     android:id="@+id/tvGenreTitle"
                     android:layout_width="wrap_content"
@@ -71,7 +71,38 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!--LastMovies-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLastMovies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                app:layout_constraintTop_toBottomOf="@id/clGenre">
+
+                <!--title-->
+                <TextView
+                    android:id="@+id/tvLastMovies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10mdp"
+                    android:text="@string/lastMovies"
+                    android:textColor="@color/crayola"
+                    android:textSize="@dimen/_12font_mdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--recycler genre-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvLastMovies"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5mdp"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastMovies" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
