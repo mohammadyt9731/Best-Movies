@@ -17,4 +17,8 @@ object Constants {
     const val LOAD_IMAGE_CROSS_FADE=800
     const val GENRE_ID=2
 
+    //db
+    const val FAVORITE_TABLE="favorite_table"
+    const val FAVORITE_DATA_BASE="favorite_data_base"
+
 }
