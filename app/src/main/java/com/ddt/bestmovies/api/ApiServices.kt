@@ -1,5 +1,6 @@
 package com.ddt.bestmovies.api
 
+import com.ddt.bestmovies.models.detail.ResponseMovieDetail
 import com.ddt.bestmovies.models.home.ResponseGenresList
 import com.ddt.bestmovies.models.home.ResponseMoviesList
 import com.ddt.bestmovies.models.register.BodyRegister
@@ -23,5 +24,8 @@ interface ApiServices {
 
     @GET("movies")
     suspend fun searchMoviesList(@Query("q") name:String):Response<ResponseMoviesList>
+
+    @GET("movies/{movie_id}")
+    suspend fun movieDetail(@Path("movie_id")id:Int):Response<ResponseMovieDetail>
 
 }

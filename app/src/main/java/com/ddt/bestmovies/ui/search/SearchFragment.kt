@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ddt.bestmovies.databinding.FragmentSearchBinding
+import com.ddt.bestmovies.models.home.ResponseMoviesList
+import com.ddt.bestmovies.ui.home.HomeFragmentDirections
 import com.ddt.bestmovies.ui.home.adapters.LastMoviesAdapter
 import com.ddt.bestmovies.utils.initRecycler
 import com.ddt.bestmovies.utils.setVisibility
@@ -54,6 +57,13 @@ class SearchFragment : Fragment() {
                 searchAdapter.setNewListDate(it.data)
                 rvSearchList.initRecycler(LinearLayoutManager(requireContext()), searchAdapter)
             }
+
+            //click
+            searchAdapter.setOnItemClickListener {
+                val direction= SearchFragmentDirections.actionToDetail(it.id!!.toInt())
+                findNavController().navigate(direction)
+            }
+
 
             //loading
             searchViewModel.loading.observe(viewLifecycleOwner) {

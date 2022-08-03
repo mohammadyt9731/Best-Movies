@@ -38,8 +38,8 @@ class LastMoviesAdapter @Inject constructor() : RecyclerView.Adapter<LastMoviesA
 
         @SuppressLint("SetTextI18n")
         fun setData(data: ResponseMoviesList.Data) {
-            binding.apply {
-
+     //InitViews
+           binding.apply {
                 tvName.text=data.title
                 tvRate.text=data.imdbRating
                 tvCountry.text=data.country
@@ -50,10 +50,25 @@ class LastMoviesAdapter @Inject constructor() : RecyclerView.Adapter<LastMoviesA
                     crossfade(Constants.LOAD_IMAGE_CROSS_FADE)
                 }
 
+               //click
+               root.setOnClickListener{
+                   onItemClickListener?.let {
+                   it(data)
+               }
+               }
+
             }
 
         }
 
+    }
+
+    //click
+    private var onItemClickListener:((ResponseMoviesList.Data)->Unit)?=null
+
+    fun setOnItemClickListener(listener:(ResponseMoviesList.Data)->Unit){
+
+        onItemClickListener=listener
     }
 
 

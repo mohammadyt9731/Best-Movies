@@ -51,10 +51,26 @@ class FavoriteAdapter @Inject constructor() : RecyclerView.Adapter<FavoriteAdapt
                     crossfade(Constants.LOAD_IMAGE_CROSS_FADE)
                 }
 
+                //click
+                root.setOnClickListener{
+                    onItemClickListener?.let {
+                        it(data)
+                    }
+                }
+
             }
 
         }
 
+    }
+
+
+    //click
+    private var onItemClickListener:((MovieEntity)->Unit)?=null
+
+    fun setOnItemClickListener(listener:(MovieEntity)->Unit){
+
+        onItemClickListener=listener
     }
 
 
