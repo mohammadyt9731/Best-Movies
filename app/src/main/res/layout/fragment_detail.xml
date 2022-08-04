@@ -81,7 +81,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/posterImagesLay">
                 <!--Title-->
                 <TextView
-                    android:id="@+id/movieNameTxt"
+                    android:id="@+id/tvMovieName"
                     style="@style/textViewLightStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -109,6 +109,7 @@
                         android:fontFamily="sans-serif-light"
                         android:textColor="@color/philippineSilver"
                         android:textSize="@dimen/_10font_mdp"
+                        android:gravity="center"
                         app:drawableStartCompat="@drawable/ic_round_star_24"
                         app:drawableTint="@color/philippineSilver"
                         app:layout_constraintEnd_toStartOf="@+id/tvTime"
@@ -123,6 +124,8 @@
                         android:drawablePadding="@dimen/_5mdp"
                         android:fontFamily="sans-serif-light"
                         android:textColor="@color/philippineSilver"
+
+                        android:gravity="center"
                         android:textSize="@dimen/_10font_mdp"
                         app:drawableStartCompat="@drawable/ic_round_access_time_24"
                         app:drawableTint="@color/philippineSilver"
@@ -139,6 +142,7 @@
                         android:fontFamily="sans-serif-light"
                         android:textColor="@color/philippineSilver"
                         android:textSize="@dimen/_10font_mdp"
+                        android:gravity="center"
                         app:drawableStartCompat="@drawable/ic_round_calendar_today_24"
                         app:drawableTint="@color/philippineSilver"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -165,6 +169,8 @@
                     android:drawablePadding="@dimen/_5mdp"
                     android:fontFamily="sans-serif-light"
                     android:text="@string/summary"
+                    android:gravity="center"
+
                     android:textColor="@color/philippineSilver"
                     android:textSize="@dimen/_12font_mdp"
                     app:drawableStartCompat="@drawable/ic_round_info_24"
@@ -199,6 +205,7 @@
                     android:drawablePadding="@dimen/_5mdp"
                     android:fontFamily="sans-serif-light"
                     android:text="@string/actors"
+                    android:gravity="center"
                     android:textColor="@color/philippineSilver"
                     android:textSize="@dimen/_12font_mdp"
                     app:drawableStartCompat="@drawable/ic_round_person_24"

@@ -37,11 +37,15 @@ class FavoriteFragment : Fragment() {
         return binding.root
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            //getMoviesList
+            //Show all favorite
+            favoriteViewModel.loadFavoriteList()
+            //List
             favoriteViewModel.favoriteList.observe(viewLifecycleOwner) {
                 favoriteAdapter.setNewListDate(it)
                 rvFavoriteList.initRecycler(LinearLayoutManager(requireContext()), favoriteAdapter)

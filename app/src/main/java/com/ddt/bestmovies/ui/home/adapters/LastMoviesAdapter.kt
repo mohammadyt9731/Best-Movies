@@ -34,6 +34,10 @@ class LastMoviesAdapter @Inject constructor() : RecyclerView.Adapter<LastMoviesA
 
     override fun getItemCount() = moviesList.size
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     inner class ViewHolder() : RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("SetTextI18n")

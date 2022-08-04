@@ -26,6 +26,10 @@ class DetailImageAdapter @Inject constructor() : RecyclerView.Adapter<DetailImag
 
     override fun getItemCount() = differ.currentList.size
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     inner class ViewHolder : RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("SetTextI18n")

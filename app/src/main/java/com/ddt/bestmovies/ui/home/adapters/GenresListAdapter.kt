@@ -33,6 +33,10 @@ class GenresListAdapter @Inject constructor() : RecyclerView.Adapter<GenresListA
 
     override fun getItemCount() = differ.currentList.size
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     inner class ViewHolder() : RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("SetTextI18n")
